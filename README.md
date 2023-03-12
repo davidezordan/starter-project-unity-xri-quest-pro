@@ -1,6 +1,6 @@
 # Unity XRI starter project with Meta Quest passthrough.
 
-A sample starter project using Unity XRI samples targeting Meta Quest Pro including passthrough functionalities.
+A sample starter project using Unity XRI samples targeting Meta Quest Pro including passthrough and hand-tracking functionalities.
 
 ![Screenshot 2023-03-12 at 20 26 11](https://user-images.githubusercontent.com/99928/224571549-98475d5b-c48a-49a7-ac8e-cf3f09352f11.png)
 
