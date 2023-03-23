@@ -422,7 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hand: {fileID: 4479476189240411809}
   _offset: {x: -0.1091, y: -0.0222, z: -0.043}
-  _rotation: {x: 0.1598225, y: 0.6888081, z: -0.68880856, w: -0.15982178}
+  _rotation: {x: 0.29883647, y: 0.640856, z: -0.6408568, w: -0.298836}
   _relativeTransform: {fileID: 0}
 --- !u!1 &4897006678491505480
 GameObject:
@@ -867,7 +867,7 @@ MonoBehaviour:
   _minLength: 0.05
   _maxLength: 5
   _radiusStart: 0.03
-  _apertureDegrees: 4
+  _apertureDegrees: 10
 --- !u!1 &7590733698742639281
 GameObject:
   m_ObjectHideFlags: 0

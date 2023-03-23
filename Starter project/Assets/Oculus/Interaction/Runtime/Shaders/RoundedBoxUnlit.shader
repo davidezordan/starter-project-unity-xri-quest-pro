@@ -12,7 +12,8 @@ permissions and limitations under the License.
 
 Shader "Interaction/RoundedBoxUnlit"
 {
-    Properties {
+    Properties
+    {
         _Color("Color", Color) = (0, 0, 0, 1)
 
         _BorderColor("BorderColor", Color) = (0, 0, 0, 1)
@@ -29,7 +30,10 @@ Shader "Interaction/RoundedBoxUnlit"
 
     SubShader
     {
-        Tags {"Queue"="Transparent" "RenderType"="Transparent"}
+        Tags
+        {
+            "Queue"="Transparent" "RenderType"="Transparent"
+        }
         ZWrite Off
         Blend SrcAlpha OneMinusSrcAlpha
         ZTest [_ZTest]
@@ -91,15 +95,26 @@ Shader "Interaction/RoundedBoxUnlit"
 
             fixed4 frag (v2f i) : SV_Target
             {
-              float sdResult = sdRoundBox(i.uv, i.dimensions.xy - i.dimensions.ww * 2.0f, i.radii);
+                float dist = sdRoundBox(i.uv, i.dimensions.xy - i.dimensions.ww * 2.0f, i.radii);
+                float2 ddDist = float2(ddx(dist), ddy(dist));
+                float ddDistLen = length(ddDist);
 
-                clip(i.dimensions.w * 2.0f - sdResult);
+                float outerRadius = i.dimensions.w;
+                float innerRadius = i.dimensions.z;
 
-                if (-i.dimensions.z * 2.0f - sdResult < 0.0f)
-                {
-                  return i.borderColor;
-                }
-                return i.color;
+                float borderMask = (outerRadius > 0.0f | innerRadius > 0.0f)? 1.0 : 0.0;
+
+                float outerDist = dist - outerRadius * 2.0;
+                float outerDistOverLen = outerDist / ddDistLen;
+                clip(1.0 - outerDistOverLen < 0.1f ? -1:1);
+
+                float innerDist = dist + innerRadius * 2.0;
+                float innerDistOverLen = innerDist / ddDistLen;
+
+                float colorLerpParam = saturate(innerDistOverLen) * borderMask;
+                float4 fragColor = lerp(i.color, i.borderColor, colorLerpParam);
+                fragColor.a *= (1.0 - saturate(outerDistOverLen));
+                return fragColor;
             }
             ENDCG
         }

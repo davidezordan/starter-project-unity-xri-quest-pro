@@ -61,10 +61,13 @@ namespace Oculus.Interaction.Editor
             string fieldName,
             FieldWiringStrategy[] wiringMethods)
         {
-            var field = monoBehaviour.GetType().GetField(fieldName,
-                    BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-
-            if (field == null || field.GetValue(monoBehaviour) != null)
+            FieldInfo field = FindField(fieldName, monoBehaviour.GetType());
+            if (field == null)
+            {
+                return false;
+            }
+            UnityEngine.Object value = field.GetValue(monoBehaviour) as UnityEngine.Object;
+            if (value != null)
             {
                 return false;
             }
@@ -99,6 +102,22 @@ namespace Oculus.Interaction.Editor
                              monoBehaviour.gameObject.name + "::" + monoBehaviour.GetType().Name +
                              "." + field.Name + " could be found.");
             return false;
+        }
+
+        private static FieldInfo FindField(string fieldName, Type type)
+        {
+            if (type == null)
+            {
+                return null;
+            }
+
+            FieldInfo field = type.GetField(fieldName,
+                   BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+            if (field == null)
+            {
+                return FindField(fieldName, type.BaseType);
+            }
+            return field;
         }
     }
 }

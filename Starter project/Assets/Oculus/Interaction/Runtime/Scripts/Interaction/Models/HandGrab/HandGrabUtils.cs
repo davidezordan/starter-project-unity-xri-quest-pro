@@ -66,7 +66,11 @@ namespace Oculus.Interaction.HandGrab
         {
             GameObject go = new GameObject(name ?? "HandGrabInteractable");
             go.transform.SetParent(parent, false);
+            go.SetActive(false);
             HandGrabInteractable record = go.AddComponent<HandGrabInteractable>();
+            record.InjectRigidbody(parent.GetComponentInParent<Rigidbody>());
+            record.InjectPointableElement(parent.GetComponentInParent<Grabbable>());
+            go.SetActive(true);
             return record;
         }
 
