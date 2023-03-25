@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/HandVisualizer.unity
-    guid: 6472a9a4b4a9245b0b9941315fc2e741
   - enabled: 1
     path: Assets/Scenes/HandsDemoScene.unity
     guid: 198980177cb9e484da17475a526ba6cd
