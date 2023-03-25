@@ -132,6 +132,10 @@ namespace Oculus.Interaction.DistanceReticles
             {
                 UpdateLine();
             }
+            else
+            {
+                HideLine();
+            }
         }
 
         protected virtual void InteractableSet(IRelativeToRef interactable)
@@ -174,6 +178,7 @@ namespace Oculus.Interaction.DistanceReticles
         }
 
         protected abstract void RenderLine(Vector3[] linePoints);
+        protected abstract void HideLine();
 
         protected Vector3 TargetHit(Vector3 hitPoint)
         {

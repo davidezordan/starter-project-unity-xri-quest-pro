@@ -297,7 +297,7 @@ namespace Oculus.Interaction.HandGrab.Recorder
             interactable = HandGrabUtils.CreateHandGrabInteractable(recorderStep.Item.transform);
             if (recorderStep.Item.TryGetComponent(out Grabbable grabbable))
             {
-                interactable.InjectOptionalPointableElement(grabbable);
+                interactable.InjectPointableElement(grabbable);
             }
 
             var pointData = new HandGrabUtils.HandGrabPoseData()

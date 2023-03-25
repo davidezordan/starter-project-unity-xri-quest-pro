@@ -20,7 +20,6 @@
 
 using System;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace Oculus.Interaction.Input
 {
@@ -58,7 +57,8 @@ namespace Oculus.Interaction.Input
         private UpdateModeFlags _updateMode;
         public UpdateModeFlags UpdateMode => _updateMode;
 
-        [SerializeField, Interface(typeof(IDataSource)), Optional]
+        [SerializeField, Interface(typeof(IDataSource))]
+        [Optional(OptionalAttribute.Flag.DontHide)]
         private MonoBehaviour _updateAfter;
 
         private IDataSource UpdateAfter;

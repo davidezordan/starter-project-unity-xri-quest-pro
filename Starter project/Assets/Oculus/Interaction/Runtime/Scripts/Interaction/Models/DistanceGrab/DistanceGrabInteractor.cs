@@ -44,8 +44,8 @@ namespace Oculus.Interaction
         public IVelocityCalculator VelocityCalculator { get; set; }
 
         [SerializeField]
-        private DistantCandidateComputer<DistanceGrabInteractable> _distantCandidateComputer
-            = new DistantCandidateComputer<DistanceGrabInteractable>();
+        private DistantCandidateComputer<DistanceGrabInteractor, DistanceGrabInteractable> _distantCandidateComputer
+            = new DistantCandidateComputer<DistanceGrabInteractor, DistanceGrabInteractable>();
 
         private IMovement _movement;
 
@@ -96,8 +96,7 @@ namespace Oculus.Interaction
         protected override DistanceGrabInteractable ComputeCandidate()
         {
             DistanceGrabInteractable bestCandidate = _distantCandidateComputer.ComputeCandidate(
-                () => DistanceGrabInteractable.Registry.List(this),
-                out Vector3 hitPoint);
+                DistanceGrabInteractable.Registry, this, out Vector3 hitPoint);
             HitPoint = hitPoint;
             return bestCandidate;
         }
@@ -169,7 +168,7 @@ namespace Oculus.Interaction
 
         #region Inject
         public void InjectAllDistanceGrabInteractor(ISelector selector,
-            DistantCandidateComputer<DistanceGrabInteractable> distantCandidateComputer)
+            DistantCandidateComputer<DistanceGrabInteractor, DistanceGrabInteractable> distantCandidateComputer)
         {
             InjectSelector(selector);
             InjectDistantCandidateComputer(distantCandidateComputer);
@@ -181,7 +180,7 @@ namespace Oculus.Interaction
             Selector = selector;
         }
 
-        public void InjectDistantCandidateComputer(DistantCandidateComputer<DistanceGrabInteractable> distantCandidateComputer)
+        public void InjectDistantCandidateComputer(DistantCandidateComputer<DistanceGrabInteractor, DistanceGrabInteractable> distantCandidateComputer)
         {
             _distantCandidateComputer = distantCandidateComputer;
         }
