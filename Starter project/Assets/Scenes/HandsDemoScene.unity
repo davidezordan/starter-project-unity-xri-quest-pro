@@ -8539,7 +8539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectionSurfaceType: 0
-  overlayType: 1
+  overlayType: 2
   compositionDepth: 0
   hidden: 0
   overridePerLayerColorScaleAndOffset: 0
@@ -8580,7 +8580,7 @@ MonoBehaviour:
   colorMapEditorPosterize: 0
   colorMapEditorSaturation: 0
   serializedSurfaceGeometry: []
-  textureOpacity_: 1
+  textureOpacity_: 0.15
   edgeRenderingEnabled_: 0
   edgeColor_: {r: 1, g: 1, b: 1, a: 1}
   colorMapType: 0
@@ -8591,7 +8591,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051154700}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d62788dcc9ea074fa279a45302d60de, type: 3}
   m_Name: 
@@ -16775,6 +16775,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Complete XR Origin Hands Set Up
       objectReference: {fileID: 0}
+    - target: {fileID: 1470082431350528778, guid: 5eccbf4be2c00e94689ee8062e4e7276,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470082431350528778, guid: 5eccbf4be2c00e94689ee8062e4e7276,
+        type: 3}
+      propertyPath: far clip plane
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470082431350528778, guid: 5eccbf4be2c00e94689ee8062e4e7276,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470082431350528778, guid: 5eccbf4be2c00e94689ee8062e4e7276,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470082431350528778, guid: 5eccbf4be2c00e94689ee8062e4e7276,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3113582726751902587, guid: 5eccbf4be2c00e94689ee8062e4e7276,
         type: 3}
       propertyPath: m_HandMeshMaterial
@@ -16784,6 +16809,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UseOptimizedControls
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763085288384086254, guid: 5eccbf4be2c00e94689ee8062e4e7276,
+        type: 3}
+      propertyPath: m_TrackingStateInput.m_Action.m_Id
+      value: 40471804-b4d3-410c-861c-ccab39848862
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763085288384086254, guid: 5eccbf4be2c00e94689ee8062e4e7276,
+        type: 3}
+      propertyPath: m_TrackingStateInput.m_Action.m_Name
+      value: Tracking State Input
       objectReference: {fileID: 0}
     - target: {fileID: 5773256366622995465, guid: 5eccbf4be2c00e94689ee8062e4e7276,
         type: 3}
