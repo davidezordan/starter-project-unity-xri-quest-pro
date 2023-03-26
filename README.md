@@ -12,6 +12,10 @@ An OVR passtrough layer needs to be present with the placement set to "Underlay"
 
 <img width="466" alt="image" src="https://user-images.githubusercontent.com/99928/227773351-9607d09f-21fa-47c0-b194-19cf34f4c3eb.png">
 
+Alternatively, it is possible to use a placement as "Overlay" with modified opacity:
+
+<img width="465" alt="image" src="https://user-images.githubusercontent.com/99928/227773717-deed1bf3-0e5a-4c49-a8d3-fbb637222e9d.png">
+
 The camera settings, and in particular the "Output"->"HDR" option needs to be modified as below to correctly have the passthrough working as "Underlay":
 
 <img width="477" alt="image" src="https://user-images.githubusercontent.com/99928/227773478-cefc9589-26d6-4be6-9790-9c7d3b6f1132.png">
