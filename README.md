@@ -19,4 +19,5 @@ The camera settings, and in particular the "Output"->"HDR" option needs to be mo
 ### References:
 - Unity XR Interaction Toolkit samples and starter projects - https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.3/manual/index.html
 - Oculus Integration plugin - https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022
+- Quest passtrough API official documentation: - https://developer.oculus.com/documentation/unity/unity-passthrough/
 - MRTK Quest see through - https://github.com/LocalJoost/MRTKQuestSeeThrough
