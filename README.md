@@ -20,6 +20,10 @@ The camera settings, and in particular the "Output"->"HDR" option needs to be mo
 
 <img width="477" alt="image" src="https://user-images.githubusercontent.com/99928/227773478-cefc9589-26d6-4be6-9790-9c7d3b6f1132.png">
 
+OpenXR project settings required the following to be enabled for hand tracking:
+
+<img width="950" alt="image" src="https://user-images.githubusercontent.com/99928/227774233-80457379-8675-4aae-a605-f1005f4b0d38.png">
+
 ### References:
 - Unity XR Interaction Toolkit samples and starter projects - https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.3/manual/index.html
 - Oculus Integration plugin - https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022
